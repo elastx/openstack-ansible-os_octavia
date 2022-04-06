@@ -320,9 +320,9 @@ octavia_user_haproxy_templates: {}
 # Name of the Octavia management network in Neutron
 octavia_neutron_management_network_name: lbaas-mgmt
 # Name of the provider net in the system
-octavia_provider_network_name: lbaas
+#octavia_provider_network_name: lbaas
 # Network type
-octavia_provider_network_type: flat
+#octavia_provider_network_type: flat
 # Network segmentation ID if vlan, gre...
 #octavia_provider_segmentation_id:
 # Network CIDR
