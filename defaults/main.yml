@@ -435,6 +435,7 @@ octavia_cert_key_length_server: '4096' # key length
 octavia_cert_cipher_server: 'aes256'
 octavia_cert_cipher_client: 'aes256'
 octavia_cert_key_length_client: '4096' # key length
+octavia_cert_ca_key_length_client: '4096' # key length
 octavia_cert_server_ca_subject: '/C=US/ST=Denial/L=Nowhere/O=Dis/CN=www.example.com' # change this to something more real
 octavia_cert_client_ca_subject: '/C=US/ST=Denial/L=Nowhere/O=Dis/CN=www.example.com' # change this to something more real
 octavia_cert_client_req_common_name: 'www.example.com' # change this to something more real
