@@ -215,3 +215,17 @@ endpoint_type = {{ octavia_clients_endpoint }}
 [neutron]
 region_name = {{ keystone_service_region }}
 endpoint_type = {{ octavia_clients_endpoint }}
+
+{% if octavia_keystone_audit_middlware_enabled %}
+# Octavia loads middlware based on config
+[audit]
+enabled = true
+audit_map_file = /etc/octavia/api_audit_map.conf
+ignore_req_list = {{ octavia_keystone_audit_middlware_ignore_list }}
+
+[audit_middleware_notifications]
+driver = {{ octavia_keystone_audit_middlware_driver }}
+{% if "messaging" in octavia_keystone_audit_middlware_driver %}
+transport_url = {{ octavia_oslomsg_notify_transport }}://{% for host in octavia_oslomsg_notify_servers.split(',') %}{{ octavia_oslomsg_notify_userid }}:{{ octavia_oslomsg_notify_password }}@{{ host }}:{{ octavia_oslomsg_notify_port }}{% if not loop.last %},{% else %}/{{ octavia_oslomsg_notify_vhost }}{% if octavia_oslomsg_notify_use_ssl | bool %}?ssl=1&ssl_version={{ octavia_oslomsg_notify_ssl_version }}&ssl_ca_file={{ octavia_oslomsg_notify_ssl_ca_file }}{% else %}?ssl=0{% endif %}{% endif %}{% endfor %}
+{% endif %}
+{% endif %}

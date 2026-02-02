@@ -1,0 +1,33 @@
+[DEFAULT]
+# default target endpoint type
+# should match the endpoint type defined in service catalog
+target_endpoint_type = None
+
+# possible end path of api requests
+[path_keywords]
+detail = None
+lbaas = None
+octavia = None
+loadbalancers = loadbalancer
+stats = None
+status = None
+failover = None
+listeners = listener
+pools = pool
+members = member
+healthmonitors = healthmonitor
+l7policies = l7policy
+rules = rule
+quotas = quota
+providers = provider
+flavor_capabilities = None
+availability_zone_capabilities = None
+flavors = flavor
+flavorprofiles = flavorprofile
+availabilityzones = availabilityzone
+availabilityzoneprofiles = availabilityzoneprofile
+amphorae = None
+
+# map endpoint type defined in service catalog to CADF typeURI
+[service_endpoints]
+load-balancer = service/network/load-balancer

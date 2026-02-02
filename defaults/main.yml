@@ -136,6 +136,10 @@ octavia_service_user_domain_id: default
 octavia_keystone_auth_plugin: "{{ octavia_keystone_auth_type }}"
 octavia_keystone_auth_type: password
 
+octavia_keystone_audit_middlware_enabled: false
+octavia_keystone_audit_middlware_ignore_list: ""
+octavia_keystone_audit_middlware_driver: log
+
 ## octavia api service type and data
 octavia_service_name: octavia
 octavia_service_description: "Octavia Load Balancing Service"
